@@ -15,3 +15,12 @@ theme:
         name: Switch to light mode    
       primary: teal
       accent: lime
+
+nav:
+  - Welcome: index.md
+  - Responsible AI: responsible-ai.md
+  - Security: security.md
+  - Scaling: scaling.md
+  - Learning:
+    - Learn Intelligent App: learning/learn-intelligent-apps.md
+  - Resources: resources.md 
