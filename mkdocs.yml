@@ -18,6 +18,7 @@ theme:
 
 nav:
   - Welcome: index.md
+  - Path to production: productionizing.md
   - Responsible AI: responsible-ai.md
   - Security: security.md
   - Scaling: scaling.md
