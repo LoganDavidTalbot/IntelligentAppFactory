@@ -48,7 +48,5 @@ nav:
     - Sustainability: well-architected/sustainability.md
   - Reference Architecture:
     - Overview: reference-architecture/overview.md
-  - Getting Started:
-    - Learn Intelligent App: getting-started/learn-intelligent-apps.md
   - Resources: resources.md
   - news-archive: news-archive.md
