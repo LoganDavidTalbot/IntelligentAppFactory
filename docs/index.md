@@ -1,6 +1,6 @@
-# Intelligent App Factory
-![Image title](images/instagram-1.png#only-light){ width="300" align=left }
-![Image title](images/instagram-2.png#only-dark){ width="300" align=left }
+# Welcome
+![Image title](images/branding/logo-black-transparent.png#only-light){ width="400"}
+![Image title](images/branding/logo-white-transparent.png#only-dark){ width="400"}
 
 Open source project to detail how cloud native intelligent app can be secured, developed, and architected at scale. Currently the focus is around Azure solutions but at a later date will be looking to expend to other hyper-scalers.
 

@@ -2,12 +2,14 @@ site_name: Intelligent App Factory
 theme:
   name: material
   language: en
+  logo: images/branding/iaf-logo-white-transparent-500.png
+  favicon: images/branding/iaf-logo-white-transparent-500.png
   palette:
     - scheme: default
       toggle:
         icon: material/toggle-switch-off-outline 
         name: Switch to dark mode
-      primary: teal
+      primary: black
       accent: purple 
     - scheme: slate 
       toggle:
