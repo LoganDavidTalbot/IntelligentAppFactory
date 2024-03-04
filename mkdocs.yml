@@ -27,12 +27,28 @@ markdown_extensions:
   - def_list
   - pymdownx.tasklist:
       custom_checkbox: true
+extra: 
+  generator: false
+extra_css:
+  - stylesheets/extra.css
 nav:
   - Welcome: index.md
-  - Path to production: productionizing.md
-  - Responsible AI: responsible-ai.md
-  - Security: security.md
-  - Scaling: scaling.md
-  - Learning:
-    - Learn Intelligent App: learning/learn-intelligent-apps.md
-  - Resources: resources.md 
+  - Getting Started:
+    - Learn Intelligent App: getting-started/learn-intelligent-apps.md
+  - Concepts:
+    - Overview: concepts/overview.md
+  - Well-architected:
+    - Overview: well-architected/overview.md
+    - Security: well-architected/security.md
+    - Responsible AI: well-architected/responsible-ai.md
+    - Reliability: well-architected/reliability.md
+    - Operational Excellence: well-architected/operational-excellence.md
+    - Performance efficiency: well-architected/performance-efficiency.md
+    - Cost Optimization: well-architected/cost-optimization.md
+    - Sustainability: well-architected/sustainability.md
+  - Reference Architecture:
+    - Overview: reference-architecture/overview.md
+  - Getting Started:
+    - Learn Intelligent App: getting-started/learn-intelligent-apps.md
+  - Resources: resources.md
+  - news-archive: news-archive.md

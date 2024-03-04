@@ -1,6 +1,6 @@
 # Productionizing Intelligent Apps
 
-Evaluating Intelligent Apps it is common to do a proof of concept (PoC) which can be done fairly quickly. This can cause a common miss conception that Intelligent Apps are easy to build and can be ready to passed to users in production in a matter of days. This could not be further of the truth and in order to make intelligent application production ready you will need to consider these items which are modeled around cloud hyper-scalers Well-Architected Framework[^1] [^2] [^3].
+Evaluating Intelligent Apps, it is common to do a proof of concept (PoC) which can be done fairly quickly. This can cause a common miss conception that Intelligent Apps are easy to build and can be ready to passed to users in production in a matter of days. This could not be further of the truth and in order to make intelligent applications production ready you will need to consider these items which are modeled around cloud hyper-scalers Well-Architected Framework[^1] [^2] [^3].
 
 <div class="grid cards" markdown>
 
@@ -10,7 +10,7 @@ Evaluating Intelligent Apps it is common to do a proof of concept (PoC) which ca
 
     Auth, networking, OWASP 10 top for AI, protecting applications from attack  etc.
 
-    [:octicons-arrow-right-24: Reference](#)
+    [:octicons-arrow-right-24: Reference](security.md)
 
 -   :material-all-inclusive:{ .lg .middle } __Responsible AI__
 
@@ -18,7 +18,7 @@ Evaluating Intelligent Apps it is common to do a proof of concept (PoC) which ca
 
     Guardrails, practices, & principles to keep your use of AI ethical and trusted by your organization and users.
 
-    [:octicons-arrow-right-24: Reference](#)
+    [:octicons-arrow-right-24: Read more](responsible-ai.md)
 
 -   :simple-testcafe:{ .lg .middle } __Reliability__
 
@@ -26,7 +26,7 @@ Evaluating Intelligent Apps it is common to do a proof of concept (PoC) which ca
 
     Assurances in application code, infrastructure, and operations. Including at the Evaluation & testing, both at the application, model, and data level. 
 
-    [:octicons-arrow-right-24: Reference](#)
+    [:octicons-arrow-right-24: Read more](reliability.md)
 
 -   :material-checkbox-multiple-outline:{ .lg .middle } __Operational Excellence__
 
@@ -34,7 +34,7 @@ Evaluating Intelligent Apps it is common to do a proof of concept (PoC) which ca
 
     Applying DevOps practices to achieve workload quality, process efficiency, and customer satisfaction.
 
-    [:octicons-arrow-right-24: Reference](#)
+    [:octicons-arrow-right-24: Read more](operational-excellence.md)
 
 -   :fontawesome-solid-arrow-up-right-dots:{ .lg .middle } __Performance Efficiency__
 
@@ -42,7 +42,7 @@ Evaluating Intelligent Apps it is common to do a proof of concept (PoC) which ca
 
     How well your intelligent app adapts to varying demands and optimizes its resources and capacity.
 
-    [:octicons-arrow-right-24: Reference](#)
+    [:octicons-arrow-right-24: Read more](performance-efficiency.md)
 
 -   :fontawesome-solid-circle-dollar-to-slot:{ .lg .middle } __Cost Optimization__
 
@@ -50,7 +50,7 @@ Evaluating Intelligent Apps it is common to do a proof of concept (PoC) which ca
 
     Aligning business goals, ROI, and financial constraints with a cost-optimized strategy.
 
-    [:octicons-arrow-right-24: Reference](#)
+    [:octicons-arrow-right-24: Read more](cost-optimization.md)
 
 -   :material-earth:{ .lg .middle } __Sustainability__
 
@@ -77,11 +77,13 @@ Organizations can make this easier on development teams of Intelligent Apps by i
 # Developing Intelligent App
 
 1. GenAI models
+1. AI Services
 1. Prompt Engineering
 1. AI Orchestration 
 2. Embedding/ Vector databases
 1. Memory management
 1. Agents & Assistants
+1. REST API Plugins
 
 [^1]: [Azure Well-Architected Framework](https://learn.microsoft.com/en-us/azure/well-architected/)
 [^2]: [AWS Well-Architected Framework](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html)
