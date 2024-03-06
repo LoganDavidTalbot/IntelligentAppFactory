@@ -9,6 +9,6 @@
 1. Agents & Assistants
 1. REST API Plugins
 
-=== Azure Components
+=== "Azure Components"
 
 ![Azure Components](../images/diagrams/azure-components.png)
