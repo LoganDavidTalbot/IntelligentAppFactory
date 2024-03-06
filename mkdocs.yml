@@ -35,6 +35,8 @@ nav:
   - Welcome: index.md
   - Getting Started:
     - Learn Intelligent App: getting-started/learn-intelligent-apps.md
+  - Components:
+    - Overview: components/overview.md
   - Concepts:
     - Overview: concepts/overview.md
   - Well-architected:

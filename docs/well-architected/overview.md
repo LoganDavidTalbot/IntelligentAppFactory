@@ -74,17 +74,6 @@ Organizations can make this easier on development teams of Intelligent Apps by i
 
 </div>
 
-# Developing Intelligent App
-
-1. GenAI models
-1. AI Services
-1. Prompt Engineering
-1. AI Orchestration 
-2. Embedding/ Vector databases
-1. Memory management
-1. Agents & Assistants
-1. REST API Plugins
-
 [^1]: [Azure Well-Architected Framework](https://learn.microsoft.com/en-us/azure/well-architected/)
 [^2]: [AWS Well-Architected Framework](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html)
 [^3]: [Google Cloud Architecture Framework](https://cloud.google.com/architecture/framework)
