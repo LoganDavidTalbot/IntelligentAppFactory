@@ -1,4 +1,6 @@
-# Productionizing Intelligent Apps
+# Well-architected Intelligent Apps
+![Well-architected Framework](../images/Well-architected%20Framework.gif)
+
 
 Evaluating Intelligent Apps, it is common to do a proof of concept (PoC) which can be done fairly quickly. This can cause a common miss conception that Intelligent Apps are easy to build and can be ready to passed to users in production in a matter of days. This could not be further of the truth and in order to make intelligent applications production ready you will need to consider these items which are modeled around cloud hyper-scalers Well-Architected Framework[^1] [^2] [^3].
 
@@ -20,7 +22,7 @@ Evaluating Intelligent Apps, it is common to do a proof of concept (PoC) which c
 
     [:octicons-arrow-right-24: Read more](responsible-ai.md)
 
--   :simple-testcafe:{ .lg .middle } __Reliability__
+-   :octicons-check-circle-16:{ .lg .middle } __Reliability__
 
     ---
 
@@ -64,15 +66,6 @@ Evaluating Intelligent Apps, it is common to do a proof of concept (PoC) which c
 </div>
 
 Organizations can make this easier on development teams of Intelligent Apps by investing to platform engineering techniques that can lead a Internal Developer Platform (IDP) to produce better Intelligent Apps, faster.
-
-<div class="grid cards" markdown>
-
-- :fontawesome-brands-html5: __HTML__ for content and structure
-- :fontawesome-brands-js: __JavaScript__ for interactivity
-- :fontawesome-brands-css3: __CSS__ for text running out of boxes
-- :fontawesome-brands-internet-explorer: __Internet Explorer__ ... huh?
-
-</div>
 
 [^1]: [Azure Well-Architected Framework](https://learn.microsoft.com/en-us/azure/well-architected/)
 [^2]: [AWS Well-Architected Framework](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html)

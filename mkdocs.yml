@@ -59,4 +59,4 @@ nav:
     - Azure:
         Overview: reference-architecture/azure/overview.md
   - Resources: resources.md
-  - news-archive: news-archive.md
+  - News Archive: news-archive.md
