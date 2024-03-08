@@ -2,11 +2,12 @@
 ![Image title](images/branding/logo-black-transparent.png#only-light){ width="400"}
 ![Image title](images/branding/logo-white-transparent.png#only-dark){ width="400"}
 
-Open source project to detail how cloud native intelligent app can be secured, developed, and architected at scale. Currently the focus is around Azure solutions but at a later date will be looking to expend to other hyper-scalers.
+
+This open-source project provides detailed insights into how cloud-native intelligent apps can be secured, developed, and architected at scale. While the current focus is on Azure solutions, we plan to expand to other hyper-scalers in the future.
 
 ## :simple-target: Project Goals
-- [x] Collecting information from across the internet and display in an easy to use way.
-- [x] Focus from the point of view from the current Enterprise application developer. Scoped to the development & productionization of intelligent apps including prompting and fine-tuning of LLMs and the use of AI cloud services but not to training of new models.
+- [x] Aggregate information from various sources and present it in a user-friendly manner.
+- [x] Prioritize the perspective of the contemporary Enterprise application developer. The scope includes the development and production of intelligent apps, the prompting and fine-tuning of LLMs, and the use of AI cloud services, but does not extend to the training of new models.
 
 ## Content
 
@@ -40,28 +41,44 @@ Open source project to detail how cloud native intelligent app can be secured, d
 
     ---
 
-    ...
-
+    Learn how to design and deploy well-architected Intelligent Apps.
+    
     [:octicons-arrow-right-24: View](well-architected/overview.md)
 
 -   :octicons-cross-reference-16:{ .lg .middle } __Reference Architecture__
 
     ---
-
-    ...
+    
+    Explore the different reference architectures for Intelligent Apps.
 
     [:octicons-arrow-right-24: View](reference-architecture/overview.md)
-
 
 </div>
 
 ## What is an Intelligent App (Cloud Native)?
 
-A Intelligent App is a type of application that leverages the capabilities of artificial intelligence (AI) and is designed to fully exploit the advantages of the cloud computing delivery model. These applications are built and hosted directly on the cloud and are designed to embrace rapid change, large scale, and resilience.
+An Intelligent App is an application that utilizes artificial intelligence (AI) capabilities and is designed to fully leverage the benefits of the cloud computing delivery model. These applications are built and hosted directly on the cloud, designed to accommodate rapid change, large scale, and resilience.
 
-Intelligent Apps can adapt and learn from data inputs, improving their performance and accuracy over time. They can process vast amounts of data, identify patterns, make predictions, and even make decisions. This makes them particularly useful in scenarios where human-like cognition needs to be emulated or where decisions need to be made in real-time.
+Intelligent Apps can adapt and learn from data inputs, thereby improving their performance and accuracy over time. They can process vast amounts of data, identify patterns, make predictions, and even make decisions. This makes them particularly useful in scenarios where human-like cognition needs to be emulated or where decisions need to be made in real-time.
 
-Examples of Intelligent Apps include recommendation systems, predictive analytics tools, natural language processing (NLP) systems, and many more. These applications are transforming industries by delivering enhanced customer experience, improving decision-making, and optimizing operations.
+!!! info "Gartner"
+    By 2026, 30% of new applications will use AI to drive personalized adaptive user interfaces, up from less than 5% today.
+    [source](https://www.gartner.com/en/articles/demand-grows-for-intelligent-applications-powered-by-ai)
+
+### Types of Intelligent Apps
+There are several types of Intelligent Apps, including but not limited to:
+
+- __Recommendation Systems__: These apps analyze user behavior and preferences to provide personalized recommendations. They are commonly used in e-commerce and streaming platforms.
+
+- __Predictive Analytics Tools__: These apps use historical data to predict future outcomes. They are often used in finance, healthcare, and marketing.
+
+- __Natural Language Processing (NLP) Systems__: These apps can understand, interpret, and generate human language. They are used in chatbots, voice assistants, and sentiment analysis tools.
+
+- __Image and Video Analysis Apps__: These apps can analyze and interpret visual data. They are used in surveillance systems, image recognition tools, and medical imaging.
+
+- __Autonomous Machines__: These apps can perform tasks without human intervention. They are used in self-driving cars, drones, and robotics.
+
+These applications are transforming industries by delivering enhanced customer experience, improving decision-making, and optimizing operations.
 
 ### Benefits of an Intelligent Application
 
@@ -94,5 +111,5 @@ Despite the numerous benefits, there are also some potential drawbacks to consid
 - __Ethical Considerations__: The use of AI and machine learning can raise ethical questions, such as bias in decision-making processes and the potential for misuse of technology.
 
 
-## Key Contributors
+## Core Team & Contributors
 - [Logan Talbot, Tech Lead & Senior Solution Architect @ Capgemini](https://logantalbot.com/)

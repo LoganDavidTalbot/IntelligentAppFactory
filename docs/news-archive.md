@@ -44,3 +44,18 @@
 
 
 </div>
+
+## Research
+
+<div class="grid cards" markdown>
+
+-   __Demand Grows for Intelligent Applications Powered by AI__
+
+    ---
+
+     - Any software application can seem smart, but intelligent apps actually are.
+     - They can learn, adapt, generate new ideas and outcomes and increase automated and dynamic decision making.
+
+    [:octicons-arrow-right-24: Link](https://www.gartner.com/en/articles/demand-grows-for-intelligent-applications-powered-by-ai)
+
+</div>

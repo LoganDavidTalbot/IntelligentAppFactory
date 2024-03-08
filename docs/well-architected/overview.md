@@ -2,7 +2,7 @@
 ![Well-architected Framework](../images/Well-architected%20Framework.gif)
 
 
-Evaluating Intelligent Apps, it is common to do a proof of concept (PoC) which can be done fairly quickly. This can cause a common miss conception that Intelligent Apps are easy to build and can be ready to passed to users in production in a matter of days. This could not be further of the truth and in order to make intelligent applications production ready you will need to consider these items which are modeled around cloud hyper-scalers Well-Architected Framework[^1] [^2] [^3].
+When evaluating Intelligent Apps, it's common to conduct a proof of concept (PoC), which can be completed relatively quickly. This often leads to a misconception that Intelligent Apps are easy to build and can be made production-ready in just a few days. However, this is far from the truth. To prepare intelligent applications for production, several factors need to be considered. These considerations are modeled around the Well-Architected Frameworks provided by major cloud providers[^1] [^2] [^3].
 
 <div class="grid cards" markdown>
 
@@ -10,7 +10,8 @@ Evaluating Intelligent Apps, it is common to do a proof of concept (PoC) which c
 
     ---
 
-    Auth, networking, OWASP 10 top for AI, protecting applications from attack  etc.
+    Robust measures to protect information, systems, and assets, delivering business value through risk assessments and mitigation strategies.
+
 
     [:octicons-arrow-right-24: Reference](security.md)
 
