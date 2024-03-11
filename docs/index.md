@@ -63,7 +63,8 @@ Intelligent Apps can adapt and learn from data inputs, thereby improving their p
 
 !!! info "Gartner"
     By 2026, 30% of new applications will use AI to drive personalized adaptive user interfaces, up from less than 5% today.
-    [source](https://www.gartner.com/en/articles/demand-grows-for-intelligent-applications-powered-by-ai)
+
+    [:octicons-arrow-right-24: source](https://www.gartner.com/en/articles/demand-grows-for-intelligent-applications-powered-by-ai)
 
 ### Types of Intelligent Apps
 There are several types of Intelligent Apps, including but not limited to:
