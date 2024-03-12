@@ -45,6 +45,7 @@ nav:
     - Overview: components/overview.md
   - Concepts:
     - Overview: concepts/overview.md
+    - AI Charters: concepts/ai-charters.md
   - Well-architected:
     - Overview: well-architected/overview.md
     - Security: well-architected/security.md

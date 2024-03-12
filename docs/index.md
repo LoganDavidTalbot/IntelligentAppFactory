@@ -59,6 +59,9 @@ This open-source project provides detailed insights into how cloud-native intell
 
 An Intelligent App is an application that utilizes artificial intelligence (AI) capabilities and is designed to fully leverage the benefits of the cloud computing delivery model. These applications are built and hosted directly on the cloud, designed to accommodate rapid change, large scale, and resilience.
 
+![Cloud + AI Intelligent App](images/cloud+AI_Intelligent_App_white.png#only-dark)
+![Cloud + AI Intelligent App](images/cloud+AI_Intelligent_App_black.png#only-light)
+
 Intelligent Apps can adapt and learn from data inputs, thereby improving their performance and accuracy over time. They can process vast amounts of data, identify patterns, make predictions, and even make decisions. This makes them particularly useful in scenarios where human-like cognition needs to be emulated or where decisions need to be made in real-time.
 
 !!! info "Gartner"
