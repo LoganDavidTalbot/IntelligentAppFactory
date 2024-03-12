@@ -17,6 +17,10 @@ theme:
         name: Switch to light mode    
       primary: teal
       accent: lime
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+  
 markdown_extensions:
   - footnotes
   - attr_list
