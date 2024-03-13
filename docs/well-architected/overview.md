@@ -104,7 +104,11 @@ A Well-Architected Review is a systematic approach to evaluating systems based o
 
 Here are the link to the Well-Architected Frameworks for Azure: [Azure Well-Architected Review](https://docs.microsoft.com/en-us/azure/architecture/framework/).
 
+## Tradeoff between the Pillars
 
+The Well-Architected Framework is designed to help organizations make informed decisions about their architectures. However, it's important to recognize that there are trade-offs between the pillars. For example, optimizing for cost may involve trade-offs with reliability or performance efficiency. Similarly, optimizing for security may involve trade-offs with cost or operational excellence.
+
+By understanding these trade-offs, organizations can make informed decisions about how to balance the pillars based on their specific requirements and constraints. This can help them build Intelligent Apps that are well-architected and aligned with their business goals.
 
 ## Conclusion
 
