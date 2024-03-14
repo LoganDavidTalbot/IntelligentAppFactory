@@ -53,15 +53,9 @@ nav:
   - Concepts:
     - Overview: concepts/overview.md
     - AI Charters: concepts/ai-charters.md
-  - Well-architected:
-    - Overview: well-architected/overview.md
-    - Security: well-architected/security.md
-    - Responsible AI: well-architected/responsible-ai.md
-    - Reliability: well-architected/reliability.md
-    - Operational Excellence: well-architected/operational-excellence.md
-    - Performance efficiency: well-architected/performance-efficiency.md
-    - Cost Optimization: well-architected/cost-optimization.md
-    - Sustainability: well-architected/sustainability.md
+  - Well-architected Framework: well-architected-framework.md
+  - Security: security.md
+  - Responsible AI: responsible-ai.md
   - Reference Architecture:
     - Overview: reference-architecture/overview.md
     - Azure:

@@ -1,1 +1,0 @@
-# Intelligent Apps reliability
