@@ -1,6 +1,10 @@
 site_name: Intelligent App Factory
+site_description: The Intelligent App Factory (IAF) is a collection of best practices, tools, and guidance to help you build intelligent applications with confidence.
+site_author: Logan Talbot
+site_url: https://intelligentappfactory.com
+site_keywords: Intelligent App Factory, IAF, AI, ML, Machine Learning, Artificial Intelligence, Responsible AI, Well-architected Framework, Security, Reference Architecture, Azure, AWS, GCP, Google Cloud, AWS, Amazon Web Services, Microsoft Azure, Google Cloud Platform, MLOps, DevOps, DataOps, AIOps, Data Science, Data Engineering, Data Analytics, Data Governance, Data Privacy, Data Security, Data Protection, Data Ethics, Data Bias, Data Fairness, Data Explainability, Data Transparency, Data Accountability, Data Trust, Data Quality, Data Lineage, Data Catalog, Data Lake, Data Warehouse, Data Mart, Data Pipeline, Data Model, Data Schema, Data Transformation, Data Ingestion, Data Storage, Data Processing, Data Analysis, Data Visualization, Data Reporting, Data Insights, Data Intelligence, Data Strategy, Data Governance, Data Management, Data Architecture, Data Engineering, Data Science, Data Analytics, Data Privacy, Data Security, Data Protection, Data Ethics, Data Bias, Data Fairness, Data Explainability, Data Transparency, Data Accountability, Data Trust, Data Quality, Data Lineage, Data Catalog, Data Lake, Data Warehouse, Data Mart, Data Pipeline, Data Model, Data Schema, Data Transformation, Data Ingestion, Data Storage, Data Processing, Data Analysis, Data Visualization, Data Reporting, Data Insights, Data Intelligence, Data Strategy, Data Governance, Data Management, Data Architecture, Data Engineering, Data Science, Data Analytics, Data Privacy, Data Security, Data Protection, Data Ethics, Data Bias, Data Fairness, Data Explainability, Data Transparency, Data Accountability, Data Trust, Data Quality, Data Lineage, Data Catalog, Data Lake, Data Warehouse, Data Mart, Data Pipeline, Data Model, Data Schema, Data Transformation, Data Ingestion, Data Storage, Data Processing, Data Analysis, Data Visualization, Data Reporting, Data Insights, Data Intelligence, Data Strategy, Data Governance, Data Management, Data Architecture, Data Engineering, Data Science, Data Analytics, Data Privacy, Data Security, Data Protection, Data Ethics, Data Bias, Data Fairness, Data Explainability, Data Transparency, Data Accountability, Data Trust, Data Quality, Data Lineage, Data Catalog, Data Lake, Data Warehouse, Data Mart, Data Pipeline, Data Model, Data Schema, Data Transformation, Data Ingestion, Data Storage, Data Processing, Data Analysis, Data Visualization, Data Reporting, Data Insights
 theme:
-  name: material
+  name: material  
   language: en
   logo: images/branding/iaf-logo-white-transparent-500.png
   favicon: images/branding/iaf-logo-white-transparent-500.png
@@ -20,6 +24,7 @@ theme:
   features:
     - navigation.instant
     - navigation.instant.progress
+    - navigation.indexes
   
 markdown_extensions:
   - footnotes
@@ -44,6 +49,11 @@ extra:
     property: G-7L20HYSPTB
 extra_css:
   - stylesheets/extra.css
+
+plugins:
+  - blog
+  - tags
+
 nav:
   - Welcome: index.md
   - Getting Started:
@@ -62,3 +72,5 @@ nav:
         Overview: reference-architecture/azure/overview.md
   - Resources: resources.md
   - News Archive: news-archive.md
+  - Blog:
+    - blog/index.md

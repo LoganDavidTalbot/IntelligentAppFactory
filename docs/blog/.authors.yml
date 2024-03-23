@@ -1,0 +1,7 @@
+authors:
+  Logan Talbot:
+    name: Logan Talbot # Author name
+    description: Owner, Tech lead & Architect (MCT) # Author description
+    avatar: https://logantalbot.com/assets/images/me/cartoon_blue.png # Author avatar
+    slug: logan-talbot  # Author profile slug
+    url: https://logantalbot.com/ # Author website URL

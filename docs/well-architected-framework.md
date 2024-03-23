@@ -14,7 +14,7 @@ __Pillars of the Well-Architected Framework for Intelligent Applications:__
     Robust measures to protect information, systems, and assets, delivering business value through risk assessments and mitigation strategies.
 
 
-    [:octicons-arrow-right-24: Reference](security.md)
+    <!--[:octicons-arrow-right-24: Reference](security.md)-->
 
 -   :material-all-inclusive:{ .lg .middle } __Responsible AI__
 
@@ -22,7 +22,7 @@ __Pillars of the Well-Architected Framework for Intelligent Applications:__
 
     Guardrails, practices, & principles to keep your use of AI ethical and trusted by your organization and users.
 
-    [:octicons-arrow-right-24: Read more](responsible-ai.md)
+    <!--[:octicons-arrow-right-24: Read more](responsible-ai.md)-->
 
 -   :octicons-check-circle-16:{ .lg .middle } __Reliability__
 
@@ -30,7 +30,7 @@ __Pillars of the Well-Architected Framework for Intelligent Applications:__
 
     Assurances in application code, infrastructure, and operations. Including at the Evaluation & testing, both at the application, model, and data level. 
 
-    [:octicons-arrow-right-24: Read more](reliability.md)
+    <!--[:octicons-arrow-right-24: Read more](reliability.md)-->
 
 -   :material-checkbox-multiple-outline:{ .lg .middle } __Operational Excellence__
 
@@ -38,7 +38,7 @@ __Pillars of the Well-Architected Framework for Intelligent Applications:__
 
     Applying DevOps practices to achieve workload quality, process efficiency, and customer satisfaction.
 
-    [:octicons-arrow-right-24: Read more](operational-excellence.md)
+    <!--[:octicons-arrow-right-24: Read more](operational-excellence.md)-->
 
 -   :fontawesome-solid-arrow-up-right-dots:{ .lg .middle } __Performance Efficiency__
 
@@ -46,7 +46,7 @@ __Pillars of the Well-Architected Framework for Intelligent Applications:__
 
     How well your intelligent app adapts to varying demands and optimizes its resources and capacity.
 
-    [:octicons-arrow-right-24: Read more](performance-efficiency.md)
+    <!--[:octicons-arrow-right-24: Read more](performance-efficiency.md)-->
 
 -   :fontawesome-solid-circle-dollar-to-slot:{ .lg .middle } __Cost Optimization__
 
@@ -54,7 +54,7 @@ __Pillars of the Well-Architected Framework for Intelligent Applications:__
 
     Aligning business goals, ROI, and financial constraints with a cost-optimized strategy.
 
-    [:octicons-arrow-right-24: Read more](cost-optimization.md)
+    <!--[:octicons-arrow-right-24: Read more](cost-optimization.md)-->
 
 -   :material-earth:{ .lg .middle } __Sustainability__
 
@@ -62,7 +62,7 @@ __Pillars of the Well-Architected Framework for Intelligent Applications:__
 
     Environmental impacts, especially energy consumption and efficiency to reduce resource usage.
 
-    [:octicons-arrow-right-24: Reference](#)
+    <!--[:octicons-arrow-right-24: Reference](#)-->
 
 
 </div>

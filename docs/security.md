@@ -1,4 +1,4 @@
-# Well-Architected Framework: Security for Intelligent App
+# Security for Intelligent App
 
 The security of an Intelligent App should be built on a zero-trust approach, incorporating principles of confidentiality, integrity, and availability (CIA triad). It's crucial to understand the potential impact of security incidents on the business and to have measures in place to limit the damage.
 
