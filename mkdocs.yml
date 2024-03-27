@@ -25,6 +25,8 @@ theme:
     - navigation.instant
     - navigation.instant.progress
     - navigation.indexes
+    - content.code.copy
+    - content.code.annotate
   
 markdown_extensions:
   - footnotes
