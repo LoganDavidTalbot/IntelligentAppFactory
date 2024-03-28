@@ -43,7 +43,7 @@ This open-source project provides detailed insights into how cloud-native intell
 
     Learn how to design and deploy well-architected Intelligent Apps.
     
-    [:octicons-arrow-right-24: View](well-architected/overview.md)
+    [:octicons-arrow-right-24: View](well-architected-framework.md)
 
 -   :octicons-cross-reference-16:{ .lg .middle } __Reference Architecture__
 

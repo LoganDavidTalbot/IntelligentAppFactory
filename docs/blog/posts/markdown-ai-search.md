@@ -2,8 +2,8 @@
 title: Chunking markdown files into Azure AI Search for enable RAG
 description: A simple guide to chucking markdown files into Azure AI Search ready to be consumed by a intelligent application.
 date:
-    created: 2024-01-31
-    updated: 2024-02-01
+    created: 2024-04-01
+    updated: 2024-04-01
 authors:
     -  Logan Talbot
 categories:
@@ -11,8 +11,13 @@ categories:
 draft: false
 readtime: 5
 tags:
-    - responsible-ai
-    - ai
+    - Azure AI Search
+    - AI
+    - Vector Databases
+    - Python
+    - Markdown
+    - RAG
+    - Intelligent Assistant
 ---
 
 # Chunking markdown files into Azure AI Search
