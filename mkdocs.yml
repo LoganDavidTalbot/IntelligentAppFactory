@@ -121,6 +121,7 @@ nav:
   - Security: security.md
   - Responsible AI: responsible-ai.md
   - Application Lifecycle: intelligent-app-lifecycle.md
+  - Recommended Certifications: certifications.md
   - Reference Architecture:
     - Overview: reference-architecture/overview.md
     - Azure:
