@@ -46,7 +46,7 @@ home_button3_blurb: |         # Short description of this button / section.
   Unleash the power of AI with our comprehensive resources for architecting intelligent apps.
 
 # Homepage Code Execution
-home_execute_js: | # Javascript to execute when accessing the homepage
+home_execute_js: | # Javascript to execute when accessing the homepage   
   console.log("This is an example!");
 
 # Theme
