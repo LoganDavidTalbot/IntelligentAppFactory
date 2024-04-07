@@ -110,6 +110,7 @@ nav:
   - Home: index.md
   - About: about.md
   - What is an intelligent app?: what-is-an-intelligent-app.md
+  - Community: community.md
   - Getting Started:
     - Learn Intelligent App: getting-started/learn-intelligent-apps.md
   - Components:
