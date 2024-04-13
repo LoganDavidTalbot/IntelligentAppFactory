@@ -127,6 +127,9 @@ nav:
     - Overview: reference-architecture/overview.md
     - Azure:
         Overview: reference-architecture/azure/overview.md
+  - AI Feature Ideas:
+    - Overview: ai-feature-ideas/overview.md
+    - UI Feature Ideas: ai-feature-ideas/ui-feature-ideas.md
   - Resources: resources.md
   - News Archive: news-archive.md
   - Blog:
