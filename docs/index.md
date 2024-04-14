@@ -1,5 +1,5 @@
 ---
 template: home.html
-title: Welcome
+title: Home
 ---
 

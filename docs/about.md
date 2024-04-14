@@ -4,11 +4,18 @@
 ![Image title](images/branding/logo-white-transparent.png#only-dark){ width="400"}
 
 
-This open-source project provides detailed insights into how cloud-native intelligent apps can be secured, developed, and architected at scale. While the current focus is on Azure solutions, we plan to expand to other hyper-scalers in the future.
+Intelligent App Factory is open-source project provides detailed insights into how Intelligent Apps can be secured, developed, and architected at scale. 
+
+If you are a developer, architect, and decision-maker understand the best practices for developing and deploying Intelligent Apps. 
+
+
+While the current focus is on Azure solutions, we plan to expand to other hyper-scalers in the future.
 
 ## :simple-target: Project Goals
 - [x] Aggregate information from various sources and present it in a user-friendly manner.
-- [x] Prioritize the perspective of the contemporary Enterprise application developer. The scope includes the development and production of intelligent apps, the prompting and fine-tuning of LLMs, and the use of AI cloud services, but does not extend to the training of new models.
+- [x] Prioritize the perspective of the contemporary Enterprise application developer and solution architect. The scope includes the development and production of intelligent apps, the prompting and fine-tuning of LLMs, and the use of AI cloud services, but does not extend to the training of new models.
+- [x] Creation of a 'factory' to scale the learning and development of intelligent applications for organizations and individuals.
+- [x] Promote the use of sustainable and ethical AI practices in the development of intelligent applications.
 
 ## Content
 
