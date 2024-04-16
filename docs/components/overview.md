@@ -18,7 +18,7 @@
     ### Data
     | Category | Services | Description | Documentation |
     | --- | --- | --- | --- |
-    | Managed Databases | Azure Cosmos DB | Globally distributed, multi-model database service | [Link](https://docs.microsoft.com/en-us/azure/cosmos-db/) |
+    | Managed Databases | Azure Cosmos DB | Globally distributed, multi-model database service | [Link](./azure/azure-cosmos-db.md) |
     | Managed Databases | Azure SQL Family | Fully managed relational database with auto-scale, integral intelligence, and robust security | [Link](https://docs.microsoft.com/en-us/azure/sql-database/) |
     | Managed Databases | Postgres | Fully managed, intelligent, and flexible PostgreSQL relational database service | [Link](https://docs.microsoft.com/en-us/azure/postgresql/) |
     | Managed Databases | Azure Cache for Redis | Fully managed, open source-compatible in-memory data store to power fast, scalable applications | [Link](https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/) |

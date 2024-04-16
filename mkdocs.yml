@@ -115,6 +115,8 @@ nav:
     - Learn Intelligent App: getting-started/learn-intelligent-apps.md
   - Components:
     - Overview: components/overview.md
+    - Azure:
+      - Azure Cosmos DB: components/azure/azure-cosmos-db.md
   - Concepts:
     - Overview: concepts/overview.md
     - AI Charters: concepts/ai-charters.md
