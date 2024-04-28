@@ -113,10 +113,16 @@ nav:
   - Community: community.md
   - Getting Started:
     - Learn Intelligent App: getting-started/learn-intelligent-apps.md
-  - Components:
-    - Overview: components/overview.md
+  - Cloud Hyperscalers:
     - Azure:
-      - Azure Cosmos DB: components/azure/azure-cosmos-db.md
+      - Overview: cloud-hyperscalers/azure/overview.md
+      - Azure Cosmos DB: cloud-hyperscalers/azure/azure-cosmos-db.md
+  - Programming Languages:
+    - .NET:
+      - Overview: programming-languages/dotnet/overview.md
+      - Semantic Kernel: programming-languages/dotnet/semantic-kernel.md
+    - Python:
+      - Overview: programming-languages/python/overview.md
   - Concepts:
     - Overview: concepts/overview.md
     - AI Charters: concepts/ai-charters.md
