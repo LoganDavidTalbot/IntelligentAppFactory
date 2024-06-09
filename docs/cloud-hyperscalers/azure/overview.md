@@ -4,9 +4,7 @@ Azure is a cloud computing platform and infrastructure created by Microsoft. The
 
 Here is the Azure Intelligent Application Stack:
 
-![Azure Components](../../images/diagrams/azure-intelligent-app-stack.png)
-
-[Download...](../../images/diagrams/azure-intelligent-app-stack.pdf)
+[![Azure Components](../../images/diagrams/azure-intelligent-app-stack.png)](../../images/diagrams/azure-intelligent-app-stack.pdf)
 
 
 ## AI
