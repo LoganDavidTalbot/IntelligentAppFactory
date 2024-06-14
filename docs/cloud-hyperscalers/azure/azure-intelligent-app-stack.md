@@ -1,4 +1,9 @@
-# Overview
+---
+title: Azure Intelligent App Stack
+description: Full stack of Azure services for building intelligent applications.
+---
+
+# Azure Intelligent App Stack
 
 Azure is a cloud computing platform and infrastructure created by Microsoft. The platform offers a wide range of services including computing, storage, databases, analytics, networking, AI, and IoT. Azure provides create options for building, deploying, and managing intelligent applications through its global network of data centers.
 

@@ -115,7 +115,7 @@ nav:
     - Learn Intelligent App: getting-started/learn-intelligent-apps.md
   - Cloud Hyperscalers:
     - Azure:
-      - Overview: cloud-hyperscalers/azure/overview.md
+      - Azure Intelligent App Stack: cloud-hyperscalers/azure/azure-intelligent-app-stack.md
       - Azure Cosmos DB: cloud-hyperscalers/azure/azure-cosmos-db.md
   - Programming Languages:
     - .NET:
