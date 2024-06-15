@@ -117,6 +117,8 @@ nav:
     - Azure:
       - Azure Intelligent App Stack: cloud-hyperscalers/azure/azure-intelligent-app-stack.md
       - Azure Cosmos DB: cloud-hyperscalers/azure/azure-cosmos-db.md
+    - AWS:
+      - AWS Intelligent App Stack: cloud-hyperscalers/aws/aws-intelligent-app-stack.md
   - Programming Languages:
     - .NET:
       - Overview: programming-languages/dotnet/overview.md
