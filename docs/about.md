@@ -12,10 +12,22 @@ If you are a developer, architect, and decision-maker understand the best practi
 While the current focus is on Azure solutions, we plan to expand to other hyper-scalers in the future.
 
 ## :simple-target: Project Goals
+
 - [x] Aggregate information from various sources and present it in a user-friendly manner.
 - [x] Prioritize the perspective of the contemporary Enterprise application developer and solution architect. The scope includes the development and production of intelligent apps, the prompting and fine-tuning of LLMs, and the use of AI cloud services, but does not extend to the training of new models.
 - [x] Creation of a 'factory' to scale the learning and development of intelligent applications for organizations and individuals.
 - [x] Promote the use of sustainable and ethical AI practices in the development of intelligent applications.
+
+## :material-eye-plus: Our Values
+
+Our values guide our actions and decisions as we strive to succeed our project goals and deliver exceptional experiences to our community members:
+
+-[x] Empowerment: We empower individuals and organizations to harness the power of intelligent apps and AI technologies to achieve their goals.
+-[x] Education: We are committed to providing educational resources and training opportunities to help individuals and organizations build their skills in developing intelligent apps.
+-[x] Innovation: We are committed to driving innovation in the field of intelligent applications, pushing the boundaries of what is possible and exploring new possibilities.
+-[x] Community: We actively engage with the developer community, sharing knowledge and collaborating to drive innovation in the field of intelligent applications.
+-[x] Responsibility: We take responsibility for the impact of our intelligent applications on society, ensuring that they are used ethically and responsibly.
+-[x] Agility: We embrace change and adapt quickly to evolving market trends and community demands.
 
 ## Content
 
