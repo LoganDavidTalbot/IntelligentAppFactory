@@ -4,14 +4,11 @@
 ![Image title](images/branding/logo-white-transparent.png#only-dark){ width="400"}
 
 
-Intelligent App Factory is open-source project provides detailed insights into how Intelligent Apps can be secured, developed, and architected at scale. 
-
-If you are a developer, architect, and decision-maker understand the best practices for developing and deploying Intelligent Apps. 
-
+Intelligent App Factory is open-source project provides detailed insights into how Intelligent Apps can be secured, developed, and architected at scale. Aiming to Empower, Educate, and Innovate the developer community and enterprises in the field of Intelligent Apps.
 
 While the current focus is on Azure solutions, we plan to expand to other hyper-scalers in the future.
 
-## :simple-target: Project Goals
+## :simple-target: Our Goals
 
 - [x] Aggregate information from various sources and present it in a user-friendly manner.
 - [x] Prioritize the perspective of the contemporary Enterprise application developer and solution architect. The scope includes the development and production of intelligent apps, the prompting and fine-tuning of LLMs, and the use of AI cloud services, but does not extend to the training of new models.
@@ -20,7 +17,7 @@ While the current focus is on Azure solutions, we plan to expand to other hyper-
 
 ## :material-eye-plus: Our Values
 
-Our values guide our actions and decisions as we strive to succeed our project goals and deliver exceptional experiences to our community members:
+Our values guide our actions and decisions as we strive to succeed our goals and deliver exceptional experiences to our community members:
 
 -[x] Empowerment: We empower individuals and organizations to harness the power of intelligent apps and AI technologies to achieve their goals.
 -[x] Education: We are committed to providing educational resources and training opportunities to help individuals and organizations build their skills in developing intelligent apps.
