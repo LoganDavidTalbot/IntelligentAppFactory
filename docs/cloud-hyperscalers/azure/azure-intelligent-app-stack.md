@@ -11,6 +11,9 @@ Here is the Azure Intelligent Application Stack:
 
 [![Azure Components](../../images/diagrams/azure-intelligent-app-stack.png)](../../images/diagrams/azure-intelligent-app-stack.pdf)
 
+Video Overview of the Azure Intelligent App Stack:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XY__qtT5Dd0?si=oWaYVW-aZntwMaAk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## AI
 | Category | Service | Description | Documentation |
