@@ -7,7 +7,7 @@ date:
 authors:
     -  Logan Talbot
 categories:
-    - first
+    - Azure
 draft: false
 readtime: 5
 tags:
