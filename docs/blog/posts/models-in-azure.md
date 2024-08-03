@@ -84,6 +84,15 @@ It is important to understand there is a separate benchmarks for embedding model
 
 ## AI Services
 
+Azure AI Studio provides a range of AI services that can be used to build and deploy AI solutions. These services include but are not limited to:
+
+## Speech Services
+
+## Vision & Document Services
+
+## Content Safety Services
+
+Idea to spilt this into separate videos for each service, to provide a more in-depth look at each service and how it can be used to build AI solutions.
 
 ## References
 
