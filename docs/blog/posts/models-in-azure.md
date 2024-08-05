@@ -9,7 +9,7 @@ authors:
 categories:
     - Azure
     - Azure AI
-draft: false
+draft: true
 readtime: 5
 tags:
     - Azure
@@ -86,14 +86,24 @@ It is important to understand there is a separate benchmarks for embedding model
 
 Azure AI Studio provides a range of AI services that can be used to build and deploy AI solutions. These services include but are not limited to:
 
-## Speech Services
+- Azure AI Search: Incorporate AI-powered cloud search functionality into your mobile and web applications.
+- Azure OpenAI: Utilize a wide range of natural language processing capabilities for various tasks.
+- Bot Service: Develop and connect chatbots across multiple channels.
+- Content Safety: Leverage an AI service that detects and filters unwanted content.
+- Custom Vision: Tailor image recognition models to suit your specific business needs.
+- Document Intelligence: Transform documents into intelligent, data-driven solutions.
+- Face: Detect and identify people and emotions in images.
+- Immersive Reader: Assist users in reading and comprehending text.
+- Language: Build applications with cutting-edge natural language understanding capabilities.
+- Speech: Convert speech to text, text to speech, perform translation, and enable speaker recognition.
+- Translator: Utilize AI-powered translation technology to translate over 100 languages and dialects.
+- Video Indexer: Extract valuable insights from your videos.
+- Vision: Analyze and interpret content within images and videos.
 
-## Vision & Document Services
-
-## Content Safety Services
-
-Idea to spilt this into separate videos for each service, to provide a more in-depth look at each service and how it can be used to build AI solutions.
+These Azure AI services provide a comprehensive suite of tools to enhance your applications with powerful AI capabilities.
 
 ## References
 
+- [What is AI Studio?](https://learn.microsoft.com/en-us/azure/ai-studio/what-is-ai-studio)
+- [Azure AI Studio Documentation](https://learn.microsoft.com/en-us/azure/ai-studio/concepts/architecture)
 - [Azure AI Model Catalog](https://azure.microsoft.com/en-us/products/ai-model-catalog/)
