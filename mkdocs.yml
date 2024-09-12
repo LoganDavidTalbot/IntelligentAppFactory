@@ -125,6 +125,7 @@ nav:
       - Semantic Kernel: programming-languages/dotnet/semantic-kernel.md
   - Concepts:
     - AI Charters: concepts/ai-charters.md
+    - AI Model Evaluation: concepts/ai-model-evaluation.md
   - Well-architected Framework: well-architected-framework.md
   - Security: security.md
   - Responsible AI: responsible-ai.md
