@@ -1,0 +1,7 @@
+@font-face {
+    font-family: "gotham-bold";
+    src: url("./GOTHAM-BOLD.TTF");
+}
+:root {
+    --md-ellipsis: "gotham-bold";
+}

@@ -1,0 +1,2655 @@
+<!-- Elements added to "main.html" will be displayed on all pages -->
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A simple guide to chucking markdown files into Azure AI Search ready to be consumed by a intelligent application.">
+      
+      
+        <meta name="author" content="Logan Talbot">
+      
+      
+        <link rel="canonical" href="https://intelligentappfactory.com/blog/2024/04/01/chunking-markdown-files-into-azure-ai-search-for-enable-rag/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../../images/branding/iaf-logo-white-transparent-500.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Chunking markdown files into Azure AI Search for enable RAG - Intelligent App Factory</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-7L20HYSPTB"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-7L20HYSPTB",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-7L20HYSPTB",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+    <!-- main.html | Added "navigation.instant" support -->
+    <link rel="canonical" href=".">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chunking-markdown-files-into-azure-ai-search" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="Intelligent App Factory" class="md-header__button md-logo" aria-label="Intelligent App Factory" data-md-component="logo">
+      
+  <img src="../../../../../images/branding/iaf-logo-white-transparent-500.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Intelligent App Factory
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chunking markdown files into Azure AI Search for enable RAG
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/LoganDavidTalbot/IntelligentAppFactory" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    IntelligentAppFactory
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Intelligent App Factory" class="md-nav__button md-logo" aria-label="Intelligent App Factory" data-md-component="logo">
+      
+  <img src="../../../../../images/branding/iaf-logo-white-transparent-500.png" alt="logo">
+
+    </a>
+    Intelligent App Factory
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/LoganDavidTalbot/IntelligentAppFactory" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    IntelligentAppFactory
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../what-is-an-intelligent-app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What is an intelligent app?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../getting-started/learn-intelligent-apps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learn Intelligent App
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cloud Hyperscalers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Cloud Hyperscalers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Azure
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            Azure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../cloud-hyperscalers/azure/azure-intelligent-app-stack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure Intelligent App Stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../cloud-hyperscalers/azure/azure-cosmos-db/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure Cosmos DB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    AWS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            AWS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../cloud-hyperscalers/aws/aws-intelligent-app-stack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AWS Intelligent App Stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Programming Languages
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Programming Languages
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    .NET
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            .NET
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../programming-languages/dotnet/dotnet-overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../programming-languages/dotnet/semantic-kernel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Semantic Kernel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Concepts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../concepts/ai-charters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI Charters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../concepts/ai-model-evaluation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI Model Evaluation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../well-architected-framework/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Well-architected Framework
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../responsible-ai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Responsible AI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../intelligent-app-lifecycle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Application Lifecycle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certifications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recommended Certifications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reference Architecture
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            Reference Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_14_1" id="__nav_14_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Azure
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_1">
+            <span class="md-nav__icon md-icon"></span>
+            Azure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../reference-architecture/azure/azure-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    AI Feature Ideas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            AI Feature Ideas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ai-feature-ideas/feature-idea-overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ai-feature-ideas/ui-feature-ideas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UI Feature Ideas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../news-archive/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    News Archive
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_18" id="__nav_18_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_18">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_18_2" id="__nav_18_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_18_2">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2024/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_18_3" id="__nav_18_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_18_3">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/first/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    first
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      The problem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-ai-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure AI Search
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-manually-index-markdown-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why manually index markdown files?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-script-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Script features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fields-in-the-azure-ai-search-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fields in the Azure AI Search Index
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Script
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python Script">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables-cli-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment variables &amp; cli arguments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-snippets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Snippets
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://logantalbot.com/assets/images/me/cartoon_blue.png" alt="Logan Talbot">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          <a href="https://logantalbot.com/">Logan Talbot</a>
+                        
+                      </strong>
+                      <br>
+                      Owner, Tech lead & Architect (MCT)
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2024-04-01 00:00:00" class="md-ellipsis">April 1, 2024</time>
+                      </div>
+                    </li>
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"/></svg>
+                          <time datetime="2024-04-01 00:00:00" class="md-ellipsis">April 1, 2024</time>
+                        </div>
+                      </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/first/">first</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              5 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+  
+
+<nav class="md-tags" >
+  
+    
+    
+    
+      <span class="md-tag">Azure AI Search</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">AI</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">Vector Databases</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">Python</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">Markdown</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">RAG</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">Intelligent Assistant</span>
+    
+  
+</nav>
+
+
+  
+  
+
+
+<h1 id="chunking-markdown-files-into-azure-ai-search">Chunking markdown files into Azure AI Search</h1>
+<p>Documentation in software development is a curial part of the software development process. Alot of the time the development documentation is written in markdown files which is what most of my professional documentation is written in but also what this blog and intelligentappfactory.com website. Giving AI/ Vectoring search capabilities to this content can bring a whole new level life to the documentation which can allow the intended audience to find the information they need quicker and easier than ever before.</p>
+<!-- more -->
+<p>In this post we will:</p>
+<ul>
+<li>Explore Azure AI search and how it can be used to vector/ semantic search markdown files.</li>
+<li>Possible uses for indexed markdown files in Azure AI search.</li>
+<li>How to process markdown files into useable chunks into Azure AI search Index.</li>
+<li>The python code to process markdown files into chunks and upload to Azure AI search index. </li>
+</ul>
+<h2 id="the-problem">The problem</h2>
+<p>Developers and users of software applications often need to find information quickly and efficiently. This can be difficult when the information is spread across multiple markdown files, each containing a large amount of text. Having an intelligent Assistant that can answer questions and surface relevant information can help users find the information they need. The first part of the solution is to store these files in way that can be easily search and then utilized by an intelligent assistant (AI orchestrator) to present the information to the user. This is where Azure AI search comes in.</p>
+<h2 id="azure-ai-search">Azure AI Search</h2>
+<p>Azure AI Search is a cloud-based search-as-a-service solution that gives developers the ability to build powerful search capabilities into their applications. It provides a range of features, including full-text search, faceted navigation, and custom ranking. Azure AI Search also supports semantic search, which uses machine learning to understand the intent behind a user's query and deliver more relevant results. For this post will are going to focus on the vector store and vector/hybrid search capabilities of Azure AI search:</p>
+<ul>
+<li><strong>Index</strong>: A collection of searchable documents that are organized into fields. Each field contains a specific piece of information about the document, such as its title, author, content, or vector embedding.</li>
+<li><strong>Document</strong>: A single item in the index that represents a piece of content, such as a markdown file test or part of time. Each document is made up of a set of fields that contain information about the content.</li>
+<li><strong>Indexer</strong>: A process that reads data from a data source, such as a database or file system, and creates documents in an index based on that data. Indexers can be scheduled to run at regular intervals to keep the index up to date with the data source.</li>
+<li><strong>Query</strong>: A request for information from the index. Queries can be simple keyword searches or more complex queries that use filters, facets, and other search features.</li>
+<li><strong>Vector Search</strong>: A search technique that uses vector embeddings to find similar documents based on their semantic meaning. Vector search can be used to find documents that are similar to a given query document or to find documents that are similar to each other.</li>
+<li><strong>Hybrid Search</strong>: A search technique that combines keyword search with vector search to deliver more relevant results. Hybrid search can be used to find documents that match a user's query while also taking into account the semantic meaning of the query.</li>
+<li><strong>Semantic Ranking</strong>: A ranking technique that uses machine learning to understand the intent behind a user's query and deliver more relevant results. Semantic ranking can be used to boost the relevance of documents that are similar to the user's query or to demote documents that are not relevant to the user's query.</li>
+</ul>
+<h2 id="solution-architecture">Solution Architecture</h2>
+<p>The ideal solution architecture for this project is shown in the diagram below:</p>
+<ol>
+<li>The markdown files are stored in an Git repository where developers commit their documentation to main branch.</li>
+<li>An Github Actions or Azure Pipeline will be triggered which will run a python script used to process the files in useable chunks and upload them to an Azure AI Search index.</li>
+<li>Azure AI Search will turn the content of each chunk into an vector embedding using Azure OpenAI's text-embedding-ada-002 or text-embedding-ada-003-large model.</li>
+<li>The Azure AI Search index is then used to power a search interface that allows users to find information in the markdown files. The search interface can be integrated into an intelligent assistant or other application to provide users with quick and easy access to the information they need. Allowing application to perform RAG (Retrieval Augmented Generation) on the indexed markdown files which could be used to provide a chat interface to the documentation.</li>
+</ol>
+<p><img alt="Solution Architecture" src="../../../../../images/blogs/markdown-ai-search/solution-architecture.png" /></p>
+<p>For this post we will be focusing on using python to process the markdown files into chunks and upload them to an Azure AI Search index locally which at a later date can be integrated into a CI/CD pipeline of the described architecture.
+<img alt="Local Solution" src="../../../../../images/blogs/markdown-ai-search/local-solution.png" /></p>
+<h3 id="why-manually-index-markdown-files">Why manually index markdown files?</h3>
+<p>The reason for manually indexing the markdown files is to allow for more control over the indexing process. This can be useful when you want to index only certain parts of the markdown files, such as code snippets or headings, or when you want to apply custom processing to the content before indexing it. </p>
+<p>Manually indexing the markdown files also allows you to experiment with different indexing strategies and see how they affect the search results. When trying using indexer with integrated vectorization or chunking the markdown files into the index, the results can be less than optimal are the solution required more control over the indexing process with the chunking of the markdown files via their headings and subheadings but also increased information in metadata and searchable/ filterable fields in the index.</p>
+<h3 id="python-script-features">Python Script features</h3>
+<p>The python script will have the following features:</p>
+<ul>
+<li><strong>Chunking</strong>: The python script will chunk the markdown files into smaller pieces based on the headings and subheadings in the files (up to 3 levels of headings). This will allow the content to be indexed more granularly and make it easier to find specific information in the files.</li>
+<li><strong>Metadata</strong>: The python script will extract metadata from the markdown files, such as the title, author, and date, and store it in the Azure AI Search index. This will allow users to filter and sort the search results based on this information.</li>
+<li><strong>Vectorization</strong>: The python script will use Azure OpenAI's text-embedding-ada-002 or text-embedding-ada-003-large model to generate vector embeddings for the content of the markdown files.</li>
+<li><strong>Indexing</strong>: The python script will upload the content, metadata, and vector embeddings to an Azure AI Search index.</li>
+<li><strong>Run many times</strong>: The python script can be run multiple times to update the index with new content or changes to existing content. This will keep the index up to date with the markdown files in the repository. Deleting the content which does not need updating is not supported in this version of the script.</li>
+</ul>
+<h3 id="fields-in-the-azure-ai-search-index">Fields in the Azure AI Search Index</h3>
+<p>The fields in the Azure AI Search index will be used to store information about the content of the markdown files. The fields will include the following:</p>
+<ul>
+<li><strong>id</strong>: A unique identifier for the document.</li>
+<li><strong>title</strong>: The title of the document.</li>
+<li><strong>content</strong>: The content of the document.</li>
+<li><strong>metadata</strong>: Additional information about the document e.g. heading information.</li>
+<li><strong>uri</strong>: The URI of the document. e.g. GitHub URL or hosted page URL.</li>
+<li><strong>repository</strong>: The repository where the document is stored.</li>
+<li><strong>path</strong>: The path to the document in the repository.</li>
+<li><strong>source</strong>: The source of the document.</li>
+<li><strong>updated</strong>: The date the document was last updated.</li>
+<li><strong>chunk_number</strong>: The number of the chunk in the document.</li>
+</ul>
+<h2 id="python-script">Python Script</h2>
+<p>The python script will be used to process the markdown files and upload them to an Azure AI Search index. </p>
+<p>The script will be run locally and will require the following dependencies to be installed:
+ - azure-search-documents
+ - azure-identity
+ - langchain_community
+ - langchain_openai
+ - langchain_text_splitters
+ - python-dotenv
+ - python-frontmatter
+ - markdown</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The full code for the python script can be found in the <a href="https://github.com/LoganDavidTalbot/IntelligentAppFactory-Solutions/tree/main/blogs-solutions/markdown-ai-search">Intelligent App Factory Solutions repository</a></p>
+</div>
+<h3 id="environment-variables-cli-arguments">Environment variables &amp; cli arguments</h3>
+<p>The python script will require the following environment variables to be set:
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">.env</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">#Azure Open AI</span>
+<span class="nv">AZURE_OPENAI_ENDPOINT</span><span class="o">=</span><span class="s2">&quot;https://{{instancename}}.openai.azure.com/&quot;</span><span class="w"> </span><span class="c1"># Azure Open AI Endpoint</span>
+<span class="nv">AZURE_OPENAI_API_KEY</span><span class="o">=</span><span class="s2">&quot;Azure Open AI Key&quot;</span><span class="w"> </span><span class="c1"># Azure Open AI Key</span>
+<span class="nv">AZURE_OPENAI_API_VERSION</span><span class="o">=</span><span class="s2">&quot;2023-05-15&quot;</span><span class="w"> </span><span class="c1"># Azure Open AI API Version</span>
+<span class="nv">AZURE_DEPLOYMENT</span><span class="o">=</span><span class="s2">&quot;text-embedding-ada-002&quot;</span><span class="w"> </span><span class="c1"># Azure Deployment name for ADA Model could be text-embedding-ada-002 or text-embedding-ada-003-large</span>
+
+<span class="c1"># Azure Search</span>
+<span class="nv">VECTOR_STORE_ADDRESS</span><span class="o">=</span><span class="s2">&quot;https://{{instancename}}.search.windows.net&quot;</span><span class="w"> </span><span class="c1"># Azure AI Search Endpoint</span>
+<span class="nv">VECTOR_STORE_PASSWORD</span><span class="o">=</span><span class="s2">&quot;Azure Search Key&quot;</span><span class="w"> </span><span class="c1">#Azure AI Search Key</span>
+<span class="nv">INDEX_NAME</span><span class="o">=</span><span class="s2">&quot;index-name&quot;</span><span class="w"> </span><span class="c1"># Azure AI Search Index Name</span>
+</code></pre></div></td></tr></table></div>
+Cli arguments for the python script:
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>__main__.py<span class="w"> </span>--repository<span class="w"> </span>org/repo<span class="w"> </span>--directory<span class="w"> </span>docs
+</code></pre></div></p>
+<h3 id="solution-files">Solution files</h3>
+<p>The python script will be split into the following files:</p>
+<ul>
+<li><code>__main__.py</code>: The main entry point for the script.</li>
+<li><code>importer.py</code>: A module that contains the main orchestrator that controllers the full process to call all other modules.</li>
+<li><code>markdown_parser.py</code>: A module that contains functions for parsing and chunks markdown files as well as retrieving metadata.</li>
+<li><code>vector_search.py</code>: A module that contains functions for uploading chunked markdown file and its metadata to the Azure AI Search index.</li>
+<li><code>document_manager.py</code>: A module that contains functions for managing the documents in the index including delete.</li>
+</ul>
+<h3 id="code-snippets">Code Snippets</h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">__main__.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span><span class="p">,</span> <span class="n">dotenv_values</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">document_importer.importer</span> <span class="kn">import</span> <span class="n">Importer</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Starting the document importer...&quot;</span><span class="p">)</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;-----------------Starting Script-----------------&quot;</span><span class="p">)</span>
+    <span class="c1"># Parse the arguments</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span> <span class="s1">&#39;--repository&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The github repository name&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-d&#39;</span><span class="p">,</span> <span class="s1">&#39;--directory&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The directory of the markdown documents&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-l&#39;</span><span class="p">,</span> <span class="s1">&#39;--loglevel&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;warning&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Provide logging level. Example --loglevel debug, default=warning&#39;</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_known_args</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">loglevel</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%(asctime)s</span><span class="s2"> - </span><span class="si">%(name)s</span><span class="s2"> - </span><span class="si">%(levelname)s</span><span class="s2"> - </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># Load the environment variables</span>
+    <span class="n">load_dotenv</span><span class="p">(</span><span class="n">override</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="o">**</span><span class="n">dotenv_values</span><span class="p">(),</span>
+    <span class="p">}</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Imported configuration of length: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Args: </span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">Importer</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">repository</span><span class="o">=</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">repository</span><span class="p">,</span> <span class="n">directory</span><span class="o">=</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">directory</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;-----------------Script Completed-----------------&quot;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">importer.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span>
+<span class="normal">94</span>
+<span class="normal">95</span>
+<span class="normal">96</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">document_importer.vector_search</span> <span class="kn">import</span> <span class="n">VectorSearch</span>
+<span class="kn">from</span> <span class="nn">document_importer.markdown_parser</span> <span class="kn">import</span> <span class="n">MarkdownParser</span>
+<span class="kn">from</span> <span class="nn">document_importer.document_manager</span> <span class="kn">import</span> <span class="n">DocumentManager</span>
+
+
+<span class="k">class</span> <span class="nc">Importer</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">repository</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initializes an instance of the Importer class.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            config (dict): The configuration dictionary.</span>
+<span class="sd">            repository (str): The repository name.</span>
+<span class="sd">            directory (str): The directory path.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Load the environment variables</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">config</span>
+        <span class="c1"># Verify the environment variables</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__check_environment_variable</span><span class="p">(</span><span class="s2">&quot;AZURE_OPENAI_ENDPOINT&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__check_environment_variable</span><span class="p">(</span><span class="s2">&quot;AZURE_OPENAI_API_KEY&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__check_environment_variable</span><span class="p">(</span><span class="s2">&quot;AZURE_OPENAI_API_VERSION&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__check_environment_variable</span><span class="p">(</span><span class="s2">&quot;AZURE_DEPLOYMENT&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__check_environment_variable</span><span class="p">(</span><span class="s2">&quot;VECTOR_STORE_ADDRESS&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__check_environment_variable</span><span class="p">(</span><span class="s2">&quot;VECTOR_STORE_PASSWORD&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__check_environment_variable</span><span class="p">(</span><span class="s2">&quot;INDEX_NAME&quot;</span><span class="p">)</span>
+        <span class="c1"># Set the parameters</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vector_search</span> <span class="o">=</span> <span class="n">VectorSearch</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">document_manager</span> <span class="o">=</span> <span class="n">DocumentManager</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">markdown_parser</span> <span class="o">=</span> <span class="n">MarkdownParser</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">directory</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">directory</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">repository</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">repository</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">chunk_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">chunk_overlap</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">failed_files</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">succeed_files</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">total_chunks</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">succeed_cleaning</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file_paths</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Runs the import process.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Get all the markdown files</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;-----------------Getting Markdown Files-----------------&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file_paths</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__get_all_files</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">directory</span><span class="p">))</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file_paths</span><span class="p">)</span><span class="si">}</span><span class="s2"> markdown files in directory </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">directory</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Files: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">file_paths</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;-----------------Getting Pre-import Statistics-----------------&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pre_import_index_stats</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">document_manager</span><span class="o">.</span><span class="n">get_document_store_statistics</span><span class="p">()</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;-----------------Starting Importing Files-----------------&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">file_path</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">file_paths</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Loading document </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">repository</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+                <span class="n">docs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">markdown_parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">repository</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">repository</span><span class="p">,</span>
+                                                  <span class="n">chunk_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">chunk_size</span><span class="p">,</span> <span class="n">chunk_overlap</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">chunk_overlap</span><span class="p">)</span>
+                <span class="n">page_contents</span> <span class="o">=</span> <span class="n">docs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;page_contents&quot;</span><span class="p">)</span>
+                <span class="n">page_metadatas</span> <span class="o">=</span> <span class="n">docs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;page_metadatas&quot;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">document_manager</span><span class="o">.</span><span class="n">clean_document</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">repository</span><span class="p">,</span> <span class="n">file_path</span><span class="p">):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">succeed_cleaning</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">vector_search</span><span class="o">.</span><span class="n">load_chunks</span><span class="p">(</span><span class="n">page_contents</span><span class="p">,</span> <span class="n">page_metadatas</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">succeed_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">total_chunks</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">page_contents</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to load document </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">failed_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;-----------------Importing files completed-----------------&quot;</span><span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;-----------------Getting Post-import Statistics-----------------&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">post_import_index_stats</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__report_result</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pre_import_index_stats</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__report_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pre_import_index_stats</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Reports the import result.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            pre_import_index_stats: The pre-import index statistics.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">failed_files</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to load </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">failed_files</span><span class="p">)</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file_paths</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed files load a total of </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">failed_files</span><span class="si">}</span><span class="s2"> markdown files.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">succeed_files</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Succeed to load </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">succeed_files</span><span class="p">)</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file_paths</span><span class="p">)</span><span class="si">}</span><span class="s2"> markdown files &quot;</span>
+                  <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;with a total of </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">total_chunks</span><span class="si">}</span><span class="s2"> chunks &quot;</span>
+                  <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;and successful cleaned up </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">succeed_cleaning</span><span class="si">}</span><span class="s2"> older markdown files (if present).&quot;</span><span class="p">)</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Succeed files: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">succeed_files</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">document_manager</span><span class="o">.</span><span class="n">get_document_store_statistics</span><span class="p">(</span><span class="n">pre_import_index_stats</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__check_environment_variable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">environment_variable</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">environment_variable</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Required environment variable </span><span class="si">{</span><span class="n">environment_variable</span><span class="si">}</span><span class="s2"> is not set&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__get_all_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">dirpath</span><span class="p">,</span> <span class="n">dirnames</span><span class="p">,</span> <span class="n">filenames</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">filename</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;.md&#39;</span><span class="p">:</span>
+                    <span class="k">yield</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirpath</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">markdown_parser.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">frontmatter</span>
+<span class="kn">from</span> <span class="nn">langchain_text_splitters</span> <span class="kn">import</span> <span class="n">RecursiveCharacterTextSplitter</span><span class="p">,</span> <span class="n">MarkdownHeaderTextSplitter</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">frontmatter</span> <span class="kn">import</span> <span class="n">Post</span>
+
+
+<span class="k">class</span> <span class="nc">MarkdownParser</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">encoding</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">,</span>
+              <span class="n">chunk_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">chunk_overlap</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">repository</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="c1"># Load the documents</span>
+        <span class="n">markdown_document</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__load_markdown_document</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+
+        <span class="c1"># MD splits</span>
+        <span class="n">splits</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__spilt_markdown_document</span><span class="p">(</span><span class="n">chunk_size</span><span class="p">,</span> <span class="n">chunk_overlap</span><span class="p">,</span> <span class="n">markdown_document</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__format_chunks</span><span class="p">(</span><span class="n">splits</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="n">markdown_document</span><span class="p">,</span> <span class="n">repository</span><span class="o">=</span><span class="n">repository</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__spilt_markdown_document</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chunk_size</span><span class="p">,</span> <span class="n">chunk_overlap</span><span class="p">,</span> <span class="n">markdown_document</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+        <span class="n">headers_to_split_on</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">,</span> <span class="s2">&quot;Header 1&quot;</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">&quot;##&quot;</span><span class="p">,</span> <span class="s2">&quot;Header 2&quot;</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">&quot;###&quot;</span><span class="p">,</span> <span class="s2">&quot;Header 3&quot;</span><span class="p">),</span>
+        <span class="p">]</span>
+        <span class="n">markdown_splitter</span> <span class="o">=</span> <span class="n">MarkdownHeaderTextSplitter</span><span class="p">(</span>
+            <span class="n">headers_to_split_on</span><span class="o">=</span><span class="n">headers_to_split_on</span><span class="p">,</span> <span class="n">strip_headers</span><span class="o">=</span><span class="kc">False</span>
+        <span class="p">)</span>
+        <span class="n">md_header_splits</span> <span class="o">=</span> <span class="n">markdown_splitter</span><span class="o">.</span><span class="n">split_text</span><span class="p">(</span><span class="n">markdown_document</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+
+        <span class="c1"># Recursive character text splitter</span>
+        <span class="n">text_splitter</span> <span class="o">=</span> <span class="n">RecursiveCharacterTextSplitter</span><span class="p">(</span>
+            <span class="n">chunk_size</span><span class="o">=</span><span class="n">chunk_size</span><span class="p">,</span> <span class="n">chunk_overlap</span><span class="o">=</span><span class="n">chunk_overlap</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Split</span>
+        <span class="n">splits</span> <span class="o">=</span> <span class="n">text_splitter</span><span class="o">.</span><span class="n">split_documents</span><span class="p">(</span><span class="n">md_header_splits</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">splits</span>
+
+    <span class="k">def</span> <span class="nf">__load_markdown_document</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Post</span><span class="p">:</span>
+        <span class="n">markdown_document</span> <span class="o">=</span> <span class="n">frontmatter</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">markdown_document</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No frontmatter found in the markdown document at </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">markdown_document</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">markdown_document</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No title found in the frontmatter of the markdown document at </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">markdown_document</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;summary&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">markdown_document</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;summary&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No summary found in the frontmatter of the markdown document at </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">markdown_document</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;uri&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">markdown_document</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;uri&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No uri found in the frontmatter of the markdown document at </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">markdown_document</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;authors&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">markdown_document</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;authors&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="p">[]:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No authors found in the frontmatter of the markdown document at </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">markdown_document</span>
+
+    <span class="k">def</span> <span class="nf">__format_chunks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chunks</span><span class="p">,</span> <span class="n">metadata</span><span class="p">,</span> <span class="n">repository</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="n">page_metadatas</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">page_contents</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">T%H:%M:%S-00:00&quot;</span><span class="p">)</span>
+        <span class="n">chunk_number</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">chunks</span><span class="p">:</span>
+            <span class="n">chunk_number</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">page_metadatas</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">),</span>
+                    <span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="n">path</span><span class="p">,</span>
+                    <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;uri&quot;</span><span class="p">),</span>
+                    <span class="s2">&quot;repository&quot;</span><span class="p">:</span> <span class="n">repository</span><span class="p">,</span>
+                    <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">path</span><span class="p">,</span>
+                    <span class="s2">&quot;summary&quot;</span><span class="p">:</span> <span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;summary&quot;</span><span class="p">),</span>
+                    <span class="s2">&quot;authors&quot;</span><span class="p">:</span> <span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;authors&quot;</span><span class="p">),</span>
+                    <span class="s2">&quot;last_update&quot;</span><span class="p">:</span> <span class="n">today</span><span class="p">,</span>
+                    <span class="s2">&quot;heading&quot;</span><span class="p">:</span> <span class="n">chunk</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
+                    <span class="s2">&quot;chunk_number&quot;</span><span class="p">:</span> <span class="n">chunk_number</span><span class="p">,</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+            <span class="n">page_contents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">chunk</span><span class="o">.</span><span class="n">page_content</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;page_metadatas&quot;</span><span class="p">:</span> <span class="n">page_metadatas</span><span class="p">,</span>
+            <span class="s2">&quot;page_contents&quot;</span><span class="p">:</span> <span class="n">page_contents</span><span class="p">,</span>
+        <span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">vector_search.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">langchain_community.vectorstores.azuresearch</span> <span class="kn">import</span> <span class="n">AzureSearch</span>
+<span class="kn">from</span> <span class="nn">langchain_openai</span> <span class="kn">import</span> <span class="n">AzureOpenAIEmbeddings</span>
+<span class="kn">from</span> <span class="nn">langchain_community.document_loaders</span> <span class="kn">import</span> <span class="n">TextLoader</span>
+<span class="kn">from</span> <span class="nn">langchain_text_splitters</span> <span class="kn">import</span> <span class="n">CharacterTextSplitter</span>
+<span class="kn">from</span> <span class="nn">azure.search.documents.indexes.models</span> <span class="kn">import</span> <span class="p">(</span><span class="n">SearchableField</span><span class="p">,</span><span class="n">SearchField</span><span class="p">,</span><span class="n">SearchFieldDataType</span><span class="p">,</span><span class="n">SimpleField</span><span class="p">,)</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+
+<span class="k">class</span> <span class="nc">VectorSearch</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A class for performing vector-based search using Azure OpenAI and Azure Search.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{}):</span>
+        <span class="c1"># Azure OpenAI</span>
+        <span class="n">azure_endpoint</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;AZURE_OPENAI_ENDPOINT&quot;</span><span class="p">)</span>
+        <span class="n">azure_openai_api_key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;AZURE_OPENAI_API_KEY&quot;</span><span class="p">)</span>
+        <span class="n">azure_openai_api_version</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;AZURE_OPENAI_API_VERSION&quot;</span><span class="p">)</span>
+        <span class="n">azure_deployment</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;AZURE_DEPLOYMENT&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Azure Search</span>
+        <span class="n">vector_store_address</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;VECTOR_STORE_ADDRESS&quot;</span><span class="p">)</span>
+        <span class="n">vector_store_password</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;VECTOR_STORE_PASSWORD&quot;</span><span class="p">)</span>
+        <span class="n">index_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;INDEX_NAME&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Initialize the Azure OpenAI Embeddings</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">embeddings</span><span class="p">:</span> <span class="n">AzureOpenAIEmbeddings</span> <span class="o">=</span> <span class="n">AzureOpenAIEmbeddings</span><span class="p">(</span>
+            <span class="n">azure_deployment</span><span class="o">=</span><span class="n">azure_deployment</span><span class="p">,</span>
+            <span class="n">openai_api_version</span><span class="o">=</span><span class="n">azure_openai_api_version</span><span class="p">,</span>
+            <span class="n">azure_endpoint</span><span class="o">=</span><span class="n">azure_endpoint</span><span class="p">,</span>
+            <span class="n">api_key</span><span class="o">=</span><span class="n">azure_openai_api_key</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Embeddings initialized : </span><span class="si">{</span><span class="n">azure_deployment</span><span class="si">}</span><span class="s2"> (endpoint), </span><span class="si">{</span><span class="n">azure_deployment</span><span class="si">}</span><span class="s2"> (deployment)&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Initialize the Azure Search Vector Store</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vector_store</span><span class="p">:</span> <span class="n">AzureSearch</span> <span class="o">=</span> <span class="n">AzureSearch</span><span class="p">(</span>
+            <span class="n">azure_search_endpoint</span><span class="o">=</span><span class="n">vector_store_address</span><span class="p">,</span>
+            <span class="n">azure_search_key</span><span class="o">=</span><span class="n">vector_store_password</span><span class="p">,</span>
+            <span class="n">index_name</span><span class="o">=</span><span class="n">index_name</span><span class="p">,</span>
+            <span class="n">embedding_function</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">embeddings</span><span class="o">.</span><span class="n">embed_query</span><span class="p">,</span>
+            <span class="n">fields</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__index_fields</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Vector store initialized: </span><span class="si">{</span><span class="n">vector_store_address</span><span class="si">}</span><span class="s2"> (endpoint), </span><span class="si">{</span><span class="n">index_name</span><span class="si">}</span><span class="s2"> (index)&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">search_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;similarity&quot;</span><span class="p">,</span> <span class="n">filters</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vector_store</span><span class="o">.</span><span class="n">similarity_search</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="n">query</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">search_type</span><span class="o">=</span><span class="n">search_type</span><span class="p">,</span> <span class="n">filters</span><span class="o">=</span><span class="n">filters</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">load_documents</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">encoding</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">,</span> <span class="n">chunk_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">chunk_overlap</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loading documents: </span><span class="si">{path}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">loader</span> <span class="o">=</span> <span class="n">TextLoader</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">)</span>
+
+        <span class="n">documents</span> <span class="o">=</span> <span class="n">loader</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+        <span class="n">text_splitter</span> <span class="o">=</span> <span class="n">CharacterTextSplitter</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="n">chunk_size</span><span class="p">,</span> <span class="n">chunk_overlap</span><span class="o">=</span><span class="n">chunk_overlap</span><span class="p">)</span>
+        <span class="n">docs</span> <span class="o">=</span> <span class="n">text_splitter</span><span class="o">.</span><span class="n">split_documents</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">vector_store</span><span class="o">.</span><span class="n">add_documents</span><span class="p">(</span><span class="n">documents</span><span class="o">=</span><span class="n">docs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">load_chunks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">page_contents</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">page_metadatas</span><span class="p">:</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vector_store</span><span class="o">.</span><span class="n">add_texts</span><span class="p">(</span><span class="n">page_contents</span><span class="p">,</span> <span class="n">page_metadatas</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__index_fields</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>        
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">SimpleField</span><span class="p">(</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;id&quot;</span><span class="p">,</span>
+                <span class="nb">type</span><span class="o">=</span><span class="n">SearchFieldDataType</span><span class="o">.</span><span class="n">String</span><span class="p">,</span>
+                <span class="n">key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">filterable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">SearchableField</span><span class="p">(</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;content&quot;</span><span class="p">,</span>
+                <span class="nb">type</span><span class="o">=</span><span class="n">SearchFieldDataType</span><span class="o">.</span><span class="n">String</span><span class="p">,</span>
+                <span class="n">searchable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">SearchField</span><span class="p">(</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;content_vector&quot;</span><span class="p">,</span>
+                <span class="nb">type</span><span class="o">=</span><span class="n">SearchFieldDataType</span><span class="o">.</span><span class="n">Collection</span><span class="p">(</span><span class="n">SearchFieldDataType</span><span class="o">.</span><span class="n">Single</span><span class="p">),</span>
+                <span class="n">searchable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">vector_search_dimensions</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">embeddings</span><span class="o">.</span><span class="n">embed_query</span><span class="p">(</span><span class="s2">&quot;Text&quot;</span><span class="p">)),</span>
+                <span class="n">vector_search_profile_name</span><span class="o">=</span><span class="s2">&quot;myHnswProfile&quot;</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">SearchableField</span><span class="p">(</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;metadata&quot;</span><span class="p">,</span>
+                <span class="nb">type</span><span class="o">=</span><span class="n">SearchFieldDataType</span><span class="o">.</span><span class="n">String</span><span class="p">,</span>
+                <span class="n">searchable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="c1"># Additional field to store the title</span>
+            <span class="n">SearchableField</span><span class="p">(</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;title&quot;</span><span class="p">,</span>
+                <span class="nb">type</span><span class="o">=</span><span class="n">SearchFieldDataType</span><span class="o">.</span><span class="n">String</span><span class="p">,</span>
+                <span class="n">searchable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="c1"># Additional field for filtering on document source</span>
+            <span class="n">SimpleField</span><span class="p">(</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;source&quot;</span><span class="p">,</span>
+                <span class="nb">type</span><span class="o">=</span><span class="n">SearchFieldDataType</span><span class="o">.</span><span class="n">String</span><span class="p">,</span>
+                <span class="n">filterable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="c1"># Additional data field for last doc update</span>
+            <span class="n">SimpleField</span><span class="p">(</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;last_update&quot;</span><span class="p">,</span>
+                <span class="nb">type</span><span class="o">=</span><span class="n">SearchFieldDataType</span><span class="o">.</span><span class="n">DateTimeOffset</span><span class="p">,</span>
+                <span class="n">searchable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">filterable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="c1"># Additional data field for last doc update</span>
+            <span class="n">SimpleField</span><span class="p">(</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;uri&quot;</span><span class="p">,</span>
+                <span class="nb">type</span><span class="o">=</span><span class="n">SearchFieldDataType</span><span class="o">.</span><span class="n">String</span><span class="p">,</span>
+                <span class="n">searchable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">filterable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">SimpleField</span><span class="p">(</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;repository&quot;</span><span class="p">,</span>
+                <span class="nb">type</span><span class="o">=</span><span class="n">SearchFieldDataType</span><span class="o">.</span><span class="n">String</span><span class="p">,</span>
+                <span class="n">searchable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">filterable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">SimpleField</span><span class="p">(</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;summary&quot;</span><span class="p">,</span>
+                <span class="nb">type</span><span class="o">=</span><span class="n">SearchFieldDataType</span><span class="o">.</span><span class="n">String</span><span class="p">,</span>
+                <span class="n">searchable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">),</span>
+        <span class="p">]</span>
+        <span class="k">return</span> <span class="n">fields</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">document_manager.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">ast</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span>
+<span class="kn">from</span> <span class="nn">azure.core.credentials</span> <span class="kn">import</span> <span class="n">AzureKeyCredential</span>
+<span class="kn">from</span> <span class="nn">azure.search.documents</span> <span class="kn">import</span> <span class="n">SearchClient</span><span class="p">,</span> <span class="n">SearchItemPaged</span>
+<span class="kn">from</span> <span class="nn">azure.search.documents.indexes</span> <span class="kn">import</span> <span class="n">SearchIndexClient</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+
+<span class="k">class</span> <span class="nc">DocumentManager</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">service_endpoint</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;VECTOR_STORE_ADDRESS&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">index_name</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;INDEX_NAME&quot;</span><span class="p">)</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;VECTOR_STORE_PASSWORD&quot;</span><span class="p">)</span>
+        <span class="n">credential</span> <span class="o">=</span> <span class="n">AzureKeyCredential</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">search_client</span> <span class="o">=</span> <span class="n">SearchClient</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">service_endpoint</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">index_name</span><span class="p">,</span> <span class="n">credential</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">index_client</span> <span class="o">=</span> <span class="n">SearchIndexClient</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">service_endpoint</span><span class="p">,</span> <span class="n">credential</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_full_document</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">repository</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SearchItemPaged</span><span class="p">[</span><span class="n">Dict</span><span class="p">]:</span>
+        <span class="nb">filter</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;repository eq &#39;</span><span class="si">{</span><span class="n">repository</span><span class="si">}</span><span class="s2">&#39; and source eq &#39;</span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">search_client</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">search_text</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="nb">filter</span><span class="o">=</span><span class="nb">filter</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">clean_document</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">repository</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cleaning documents for </span><span class="si">{</span><span class="n">repository</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+        <span class="c1"># Getting documents from index</span>
+        <span class="n">chunks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_full_document</span><span class="p">(</span><span class="n">repository</span><span class="p">,</span> <span class="n">source</span><span class="p">)</span>
+        <span class="n">data_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="p">[</span><span class="n">data_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span> <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">chunks</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No documents found for </span><span class="si">{</span><span class="n">repository</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="c1"># Deleting documents from index</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">search_client</span><span class="o">.</span><span class="n">delete_documents</span><span class="p">(</span><span class="n">data_list</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__report_clean</span><span class="p">(</span><span class="n">repository</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">data_list</span><span class="p">,</span> <span class="n">results</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_document_store_statistics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">oldStats</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Getting statistics for index </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">index_name</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+        <span class="n">result</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">index_client</span><span class="o">.</span><span class="n">get_index_statistics</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">index_name</span><span class="p">)</span>
+        <span class="n">log</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Statistics for index </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">index_name</span><span class="si">}</span><span class="s2"> retrieved: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">if</span> <span class="n">oldStats</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">log</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; old stats: </span><span class="si">{</span><span class="n">oldStats</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">log</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="k">def</span> <span class="nf">__report_clean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">repository</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">data_list</span><span class="p">,</span> <span class="n">results</span><span class="p">):</span>
+        <span class="n">failed_to_delete</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">succeeded_to_delete</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">succeeded</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+                <span class="n">failed_to_delete</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">succeeded_to_delete</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">failed_to_delete</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to delete </span><span class="si">{</span><span class="n">failed_to_delete</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">data_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> for </span><span class="si">{</span><span class="n">repository</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Succeeded to delete </span><span class="si">{</span><span class="n">succeeded_to_delete</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">data_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">repository</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">failed_to_delete</span> <span class="o">==</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">delete_vector_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">index_client</span><span class="o">.</span><span class="n">delete_index</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this post, we have explored how to chunk markdown files into smaller pieces and upload them to an Azure AI Search index using a python script. We have also discussed the benefits of manually indexing markdown files and the features of the python script. This post is part of a series of posts on how to enable RAG (Retrieval Augmented Generation) on data sources to enable intelligent assistants to provide a chat interface to the documentation. The next post will cover how to use the Azure AI Search index to power an intelligent assistant that can answer questions and provide information from the indexed markdown files. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The full code for the python script can be found in the <a href="https://github.com/LoganDavidTalbot/IntelligentAppFactory-Solutions/tree/main/blogs-solutions/markdown-ai-search">Intelligent App Factory Solutions repository</a></p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2024 | Logan Talbot
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.indexes", "content.code.copy", "content.code.annotate", "search.suggest", "search.highlight", "search.share"], "search": "../../../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>
