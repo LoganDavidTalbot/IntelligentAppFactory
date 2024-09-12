@@ -131,11 +131,10 @@ nav:
   - Application Lifecycle: intelligent-app-lifecycle.md
   - Recommended Certifications: certifications.md
   - Reference Architecture:
-    - Overview: reference-architecture/overview.md
     - Azure:
-        Overview: reference-architecture/azure/overview.md
+        Azure Architecture: reference-architecture/azure/azure-architecture.md
   - AI Feature Ideas:
-    - Overview: ai-feature-ideas/overview.md
+    - Overview: ai-feature-ideas/feature-idea-overview.md
     - UI Feature Ideas: ai-feature-ideas/ui-feature-ideas.md
   - Resources: resources.md
   - News Archive: news-archive.md
