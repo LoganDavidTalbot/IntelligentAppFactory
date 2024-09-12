@@ -121,12 +121,9 @@ nav:
       - AWS Intelligent App Stack: cloud-hyperscalers/aws/aws-intelligent-app-stack.md
   - Programming Languages:
     - .NET:
-      - Overview: programming-languages/dotnet/overview.md
+      - Overview: programming-languages/dotnet/dotnet-overview.md
       - Semantic Kernel: programming-languages/dotnet/semantic-kernel.md
-    - Python:
-      - Overview: programming-languages/python/overview.md
   - Concepts:
-    - Overview: concepts/overview.md
     - AI Charters: concepts/ai-charters.md
   - Well-architected Framework: well-architected-framework.md
   - Security: security.md
