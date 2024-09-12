@@ -2,8 +2,8 @@
 title: AI Models & Services in Azure
 description: Exploring large/ small language models options in Azure
 date:
-    created: 2024-08-01
-    updated: 2024-08-01
+    created: 2024-27-01
+    updated: 2024-27-01
 authors:
     -  Logan Talbot
 categories:
